@@ -18,3 +18,6 @@ When the ‘Delete’ button is pressed all selected items in the listbox will b
 
 When the ‘Show as XML’ button is pressed, all of the items in the listbox must be put into XML format and displayed to the user in some way.
 
+## Running the app:
+
+Just open the project in your browser.
