@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Test</title>
+</head>
+
+<body>
+    <label for="nameValuePairInput">Name/Value Pair</label><br>
+    <input type="text" id="nameValuePairInput" name="nameValuePairInput">
+    <span id="errorMessage"></span><br><br>
+
+    <button onClick="AddPair()">Add</button>
+    <button onClick="SortName()">Sort by Name</button>
+    <button onClick="SortValue()">Sort by Value</button>
+    <button onClick="DeletePair()">Delete</button>
+    <button onClick="ShowXML()">Show XML</button><br><br>
+
+    <label for="nameValuePairList">Name/Value Pair List</label><br>
+    <select id="nameValuePairList" name="nameValuePairList" size="2" multiple="multiple"></select><br><br>
+
+    <span id='xmlArea'></span>
+
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
