@@ -1,7 +1,7 @@
 # JavascriptDevTest
 Vanilla Javascript Test for Developer Role
 
-##Required Features:
+## Required Features:
 
 Name/Value pairs are to be entered into the upper textbox. This textbox will be used by the end-user to quickly add Name/Value pairs to the list below.
 
