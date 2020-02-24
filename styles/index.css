@@ -85,7 +85,7 @@ button {
         display: grid;
         grid-gap: 10px;
         grid-template-columns: 2fr;
-        grid-template-areas: "header" "contentOne" "sideOne" "contentTwo" "sideTwo";
+        grid-template-areas: "header" "contentOne" "sideOne" "contentTwo" "sideTwo" "xml";
         height: 50%;
         width: 60%;
         background-color: white;
@@ -103,7 +103,7 @@ button {
         display: grid;
         grid-gap: 10px;
         grid-template-columns: 2fr;
-        grid-template-areas: "header" "sideOne" "contentOne" "sideTwo" "contentTwo";
+        grid-template-areas: "header" "sideOne" "contentOne" "sideTwo" "contentTwo" "xml";
         height: 50%;
         width: 60%;
         background-color: white;
@@ -120,5 +120,8 @@ button {
     }
     .sideTwo button {
         display: block;
+    }
+    .xml {
+        justify-self: center;
     }
 }
