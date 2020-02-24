@@ -2,16 +2,16 @@ body {
     background-color: cornflowerblue;
 }
 
-select {
-    overflow-y: auto;
-    width: 100%;
-}
-
 label {
     color: #737373;
 }
 
 input {
+    width: 100%;
+}
+
+select {
+    overflow-y: auto;
     width: 100%;
 }
 
