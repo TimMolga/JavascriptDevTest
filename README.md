@@ -8,7 +8,7 @@ Name/Value pairs are to be entered into the upper textbox. This textbox will be 
 When a Name/Value pair is about to be added to the list it must be validated to ensure proper syntax. If the syntax is incorrect then the Name/Value pair must not be added. The Name/Value pair entry format is shown below:
 `<name>` = `<value>`
 
-Where <name> is the name portion of the pair, and <value> is the value portion of the pair. Only valid Name/Value pairs can be added. Names and Values can contain only alpha-numeric characters. The equal-sign is used to delimit the pair, spaces before and/or after the equal-sign may be entered by the end user (and should be ignored.) 
+Where `<name>` is the name portion of the pair, and `<value>` is the value portion of the pair. Only valid Name/Value pairs can be added. Names and Values can contain only alpha-numeric characters. The equal-sign is used to delimit the pair, spaces before and/or after the equal-sign may be entered by the end user (and should be ignored.) 
 
 When the ‘Sort by Name’ button is pressed the list will be sorted ascending by Name.
 
