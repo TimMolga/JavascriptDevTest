@@ -1,5 +1,8 @@
+//Development Test completed by Timothy Molga
+
 const nameValuePairList = [];
 
+//populate the value pair list with array
 function PopulateNameValuePairList(pair) {
     const findList = document.getElementById('nameValuePairList');
     return findList.add(new Option(pair, pair));
@@ -10,9 +13,11 @@ function AddPair() {
     const pair = document.getElementById('nameValuePairInput');
     const pairValue = document.getElementById('nameValuePairInput').value;
     const error = document.getElementById('errorMessage');
+    //validate input to match requirements
     const validateInput = /^\s*[\w]+=[\w]+\s*$/;
     const validationResult = validateInput.exec(pairValue);
 
+    //trim the input and push it to the array and remove error text if applicable, otherwise show error
     if (validationResult !== null) {
         const formattedInput = pairValue.trim();
         nameValuePairList.push(formattedInput);
@@ -28,9 +33,11 @@ function AddPair() {
 //sort the list by name
 function SortName() {
     const findList = document.getElementById('nameValuePairList');
+    //reset the list
     for (let length = findList.options.length - 1; length >= 0; length--) {
         findList.options[length] = null;
     }
+    //sort and repopulate list
     const sortedList = nameValuePairList.sort();
     return sortedList.map(pair => findList.add(new Option(pair)));
 }
@@ -38,9 +45,11 @@ function SortName() {
 //sort the list by value
 function SortValue() {
     const findList = document.getElementById('nameValuePairList');
+    //reset the list
     for (let length = findList.options.length - 1; length >= 0; length--) {
         findList.options[length] = null;
     }
+    //sort and repopulate list
     const sortedList = nameValuePairList
         .map(pair => ({ full: pair, key: pair.match(/=.*$/)[0] }))
         .sort((left, right) => left.key.localeCompare(right.key))
@@ -51,6 +60,7 @@ function SortValue() {
 //delete the key value pair from the list box
 function DeletePair() {
     const pair = document.getElementById('nameValuePairList');
+    //delete selected options from listbox and array
     for (
         let selectedIndex = pair.options.length - 1; selectedIndex >= 0; selectedIndex--
     ) {
@@ -65,6 +75,7 @@ function DeletePair() {
 function ShowXML() {
     const xmlContent = document.getElementById('xmlArea');
     xmlContent.textContent = '';
+    //split the array pairs and put them into text on the page
     const pairs = nameValuePairList.map(pair => pair.split('='));
     const splitPairs = pairs.map(
         pair =>
@@ -79,7 +90,7 @@ function ShowXML() {
     xmlContent.textContent = html;
 }
 
-//set the size value of the key value pair list
+//set the size value of the select list
 function SetListSize() {
     return nameValuePairList.length > 0 && nameValuePairList.length <= 1 ? 2 : nameValuePairList.length;
 }
