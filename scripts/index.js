@@ -2,6 +2,8 @@
 
 const nameValuePairList = [];
 
+$(".xml").hide();
+
 //populate the value pair list with array
 function PopulateNameValuePairList(pair) {
     const findList = document.getElementById('nameValuePairList');
@@ -97,8 +99,10 @@ function ShowXML() {
             splitPairs.join('') +
             '</KeyValues>';
         xmlContent.textContent = html;
+        $(".xml").show();
     } else {
         xmlContent.textContent = 'There is no data to display';
+        $(".xml").show();
     }
 }
 

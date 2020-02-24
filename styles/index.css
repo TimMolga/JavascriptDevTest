@@ -51,6 +51,11 @@ button {
     grid-area: xml;
     margin-bottom: 20px;
     font-weight: bold;
+    border-left: 4px solid black;
+    border-radius: 5px;
+    background-color: #cccccc;
+    width: 90%;
+    padding: 2%;
 }
 
 @media screen and (min-width: 1024px) {
