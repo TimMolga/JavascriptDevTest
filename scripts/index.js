@@ -17,9 +17,13 @@ function AddPair() {
     const validateInput = /^\s*[\w]+=[\w]+\s*$/;
     const validationResult = validateInput.exec(pairValue);
 
-    //trim the input and push it to the array and remove error text if applicable, otherwise show error
+    //trim the input, format it, and push it to the array and remove error text if applicable, otherwise show error
     if (validationResult !== null) {
-        const formattedInput = pairValue.trim();
+        const trimmedInput = pairValue.trim();
+        const splitInput = trimmedInput.split("=");
+        const formatInputOne = splitInput[0].charAt(0).toUpperCase() + splitInput[0].substring(1);
+        const formatInputTwo = splitInput[1].charAt(0).toUpperCase() + splitInput[1].substring(1);
+        const formattedInput = formatInputOne + "=" + formatInputTwo;
         nameValuePairList.push(formattedInput);
         PopulateNameValuePairList(formattedInput);
         error.textContent = '';
