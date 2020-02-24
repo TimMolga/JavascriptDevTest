@@ -9,20 +9,32 @@
 </head>
 
 <body>
-    <label for="nameValuePairInput">Name/Value Pair</label><br>
-    <input type="text" id="nameValuePairInput" name="nameValuePairInput">
-    <span id="errorMessage"></span><br><br>
-
-    <button onClick="AddPair()">Add</button>
-    <button onClick="SortName()">Sort by Name</button>
-    <button onClick="SortValue()">Sort by Value</button>
-    <button onClick="DeletePair()">Delete</button>
-    <button onClick="ShowXML()">Show XML</button><br><br>
-
-    <label for="nameValuePairList">Name/Value Pair List</label><br>
-    <select id="nameValuePairList" name="nameValuePairList" size="SetListSize()" multiple="multiple"></select><br><br>
-
-    <span id='xmlArea'></span>
+    <div class="wrapper">
+        <div class="main-head">
+            <h3>Test</h3>
+        </div>
+        <div class="contentOne">
+            <label for="nameValuePairInput">Name/Value Pair</label>
+            <input type="text" id="nameValuePairInput" name="nameValuePairInput">
+            <span id="errorMessage"></span>
+        </div>
+        <div class="sideOne">
+            <button onClick="AddPair()">Add</button>
+        </div>
+        <div class="contentTwo">
+            <label for="nameValuePairList">Name/Value Pair List</label>
+            <select id="nameValuePairList" name="nameValuePairList" size="SetListSize()" multiple="multiple"></select>
+        </div>
+        <div class="sideTwo">
+            <button onClick="SortName()">Sort by Name</button>
+            <button onClick="SortValue()">Sort by Value</button>
+            <button onClick="DeletePair()">Delete</button>
+            <button onClick="ShowXML()">Show XML</button>
+        </div>
+        <div class="xml">
+            <span id='xmlArea'></span>
+        </div>
+    </div>
 
     <script src="scripts/index.js"></script>
 </body>

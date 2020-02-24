@@ -1,7 +1,22 @@
+body {
+    background-color: cornflowerblue;
+}
+
 select {
     overflow-y: auto;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+}
+
+label {
+    color: #737373;
+}
+
+input {
+    width: 100%;
+}
+
+button {
+    width: 100px;
 }
 
 #xmlArea {
@@ -12,6 +27,98 @@ select {
     color: red;
 }
 
-#xmlArea {
+.main-head {
+    grid-area: header;
+}
+
+.contentOne {
+    grid-area: contentOne;
+}
+
+.contentTwo {
+    grid-area: contentTwo;
+}
+
+.sideOne {
+    grid-area: sideOne;
+}
+
+.sideTwo {
+    grid-area: sideTwo;
+}
+
+.xml {
+    grid-area: xml;
+    margin-bottom: 20px;
     font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas: "header header" "contentOne sideOne" "contentTwo sideTwo" "xml xml";
+        height: 50%;
+        width: 70%;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding-left: 5%;
+    }
+    select {
+        height: 400px;
+    }
+    .sideOne:before,
+    .sideTwo:before {
+        display: block;
+        content: '\00a0';
+    }
+    .sideTwo button {
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .wrapper {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 2fr;
+        grid-template-areas: "header" "contentOne" "sideOne" "contentTwo" "sideTwo";
+        height: 50%;
+        width: 60%;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 0 5% 0 5%;
+    }
+    select {
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 768px) {
+    .wrapper {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 2fr;
+        grid-template-areas: "header" "sideOne" "contentOne" "sideTwo" "contentTwo";
+        height: 50%;
+        width: 60%;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 0 5% 0 5%;
+    }
+    select {
+        height: 150px;
+    }
+    .sideTwo,
+    .sideOne {
+        justify-self: center;
+    }
+    .sideTwo button {
+        display: block;
+    }
 }
