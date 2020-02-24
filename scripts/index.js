@@ -75,23 +75,27 @@ function ShowXML() {
     const spc = '\u00A0';
     const nl = '\r\n';
     //split the array pairs and put them into text on the page
-    const pairs = nameValuePairList.map(pair => pair.split('='));
-    const splitPairs = pairs.map(
-        pair =>
-        spc + spc + '<KeyValue>' +
-        nl + spc + spc + spc +
-        '<Key>' + pair[0] + '</Key>' +
-        nl + spc + spc + spc +
-        '<Value>' + pair[1] + '</Value>' +
-        nl + spc + spc +
-        '</KeyValue>' + nl
-    );
-    const html =
-        'XML Content' + nl + nl +
-        '<KeyValues>' + nl +
-        splitPairs.join('') +
-        '</KeyValues>';
-    xmlContent.textContent = html;
+    if (nameValuePairList.length > 0) {
+        const pairs = nameValuePairList.map(pair => pair.split('='));
+        const splitPairs = pairs.map(
+            pair =>
+            spc + spc + '<KeyValue>' +
+            nl + spc + spc + spc +
+            '<Key>' + pair[0] + '</Key>' +
+            nl + spc + spc + spc +
+            '<Value>' + pair[1] + '</Value>' +
+            nl + spc + spc +
+            '</KeyValue>' + nl
+        );
+        const html =
+            'XML Content' + nl + nl +
+            '<KeyValues>' + nl +
+            splitPairs.join('') +
+            '</KeyValues>';
+        xmlContent.textContent = html;
+    } else {
+        xmlContent.textContent = 'There is no data to display';
+    }
 }
 
 //set the size value of the select list
