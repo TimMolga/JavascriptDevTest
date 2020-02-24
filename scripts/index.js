@@ -27,7 +27,7 @@ function addPair() {
         const formatInputTwo = splitInput[1].charAt(0).toUpperCase() + splitInput[1].substring(1);
         const formattedInput = formatInputOne + "=" + formatInputTwo;
         nameValuePairList.push(formattedInput);
-        PopulateNameValuePairList(formattedInput);
+        populateNameValuePairList(formattedInput);
         error.textContent = "";
     } else {
         error.textContent = "Invalid key value pair.";
