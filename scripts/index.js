@@ -15,19 +15,18 @@ function addPair() {
     const pair = document.getElementById("nameValuePairInput");
     const pairValue = document.getElementById("nameValuePairInput").value;
     const error = document.getElementById("errorMessage");
-    //validate input to match requirements
+    //validate input to match requirements   
     const validateInput = /^\s*[0-9a-zA-Z]+=[0-9a-zA-Z]+\s*$/;
     const validationResult = validateInput.exec(pairValue);
 
     //trim the input, format it, and push it to the array and remove error text if applicable, otherwise show error
     if (validationResult !== null) {
-        const trimmedInput = pairValue.trim();
-        const splitInput = trimmedInput.split("=");
-        const formatInputOne = splitInput[0].charAt(0).toUpperCase() + splitInput[0].substring(1);
-        const formatInputTwo = splitInput[1].charAt(0).toUpperCase() + splitInput[1].substring(1);
-        const formattedInput = formatInputOne + "=" + formatInputTwo;
-        nameValuePairList.push(formattedInput);
-        populateNameValuePairList(formattedInput);
+        const formatInput = pairValue.trim().split("=");
+        const formatInputOne = formatInput[0].charAt(0).toUpperCase() + formatInput[0].substring(1);
+        const formatInputTwo = formatInput[1].charAt(0).toUpperCase() + formatInput[1].substring(1);
+        const combinedInput = formatInputOne + "=" + formatInputTwo;
+        nameValuePairList.push(combinedInput);
+        populateNameValuePairList(combinedInput);
         error.textContent = "";
     } else {
         error.textContent = "Invalid key value pair.";
