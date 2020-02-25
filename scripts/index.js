@@ -16,7 +16,7 @@ function addPair() {
     const pairValue = document.getElementById("nameValuePairInput").value;
     const error = document.getElementById("errorMessage");
     //validate input to match requirements
-    const validateInput = /^\s*[\w]+=[\w]+\s*$/;
+    const validateInput = /^\s*[0-9a-zA-Z]+=[0-9a-zA-Z]+\s*$/;
     const validationResult = validateInput.exec(pairValue);
 
     //trim the input, format it, and push it to the array and remove error text if applicable, otherwise show error
@@ -39,8 +39,8 @@ function addPair() {
 function sortName() {
     const findList = document.getElementById("nameValuePairList");
     //reset the list
-    for (let length = findList.options.length - 1; length > 0; length--) {
-        findList.options[length] = null;
+    for (let length = findList.options.length - 1; length >= 0; length--) {
+        findList.options[length].remove();
     }
     //sort and repopulate list
     const sortedList = nameValuePairList.sort();
@@ -51,8 +51,8 @@ function sortName() {
 function sortValue() {
     const findList = document.getElementById("nameValuePairList");
     //reset the list
-    for (let length = findList.options.length - 1; length > 0; length--) {
-        findList.options[length] = null;
+    for (let length = findList.options.length - 1; length >= 0; length--) {
+        findList.options[length].remove();
     }
     //sort and repopulate list
     const sortedList = nameValuePairList
@@ -66,7 +66,7 @@ function sortValue() {
 function deletePair() {
     const pair = document.getElementById("nameValuePairList");
     //delete selected options from listbox and array
-    for (let selectedIndex = pair.options.length - 1; selectedIndex > 0; selectedIndex--) {
+    for (let selectedIndex = pair.options.length - 1; selectedIndex >= 0; selectedIndex--) {
         if (pair.options[selectedIndex].selected) {
             pair.remove(selectedIndex);
             nameValuePairList.splice(selectedIndex, 1);
